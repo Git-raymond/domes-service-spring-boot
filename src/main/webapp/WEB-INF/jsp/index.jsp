@@ -33,7 +33,7 @@
 	<br>
 	<br>
 
-	<h1 class="text-center">PAGE D'ACCUEIL</h1>
+	<h1 class="text-center">PAGE D'ACCUEIL JADE</h1>
 	<p class="text-center">test</p>
 
 	<footer class="footer">
