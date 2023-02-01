@@ -34,7 +34,6 @@
 	<br>
 
 	<h1 class="text-center">PAGE D'ACCUEIL</h1>
-	<p class="text-center">test</p>
 
 	<footer class="footer">
 		<div class="container">
