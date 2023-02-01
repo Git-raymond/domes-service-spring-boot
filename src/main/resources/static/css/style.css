@@ -1,0 +1,74 @@
+.error {
+	color: #ff0000;
+	font-weight: bold;
+}
+
+
+
+/*CSS Page Login */
+.container.login {
+    width: 400px;
+    height: 300px;
+    margin: auto;
+    border: 6px solid;
+    border-color: darkgrey;
+    border-radius: 15px;
+    background-color: white;
+}
+.container.login {
+    width: 400px;
+    height: 300px;
+    margin: auto;
+    border: 6px solid;
+    border-color: darkorange;
+    border-radius: 15px;
+    background-color: aliceblue;
+    margin-top: 350px;
+}
+}
+.bg-body-tertiary {
+    --bs-bg-opacity: 1;
+    background-color: darkgrey;
+}
+
+section#login {
+    margin: 200px;
+    
+}
+nav.navbar.navbar-expand-lg.bg-body-tertiary {
+   background-color: darkgrey;
+    height: 80px;
+    
+}
+div#navbarNavAltMarkup {
+    background-color: darkseagreen;
+}
+
+.container.tagline {
+    width: 400px;
+    height: auto;
+    margin: auto;
+    border: 6px solid;
+    border-color: darkorange;
+    border-radius: 15px;
+    background-color: aliceblue;
+    margin-top: 80px;
+}
+
+.container-animal {
+    width: 400px;
+    height: auto;
+    margin: auto;
+    border: 6px solid;
+    border-color: darkorange;
+    border-radius: 15px;
+    background-color: aliceblue;
+    margin-top: 80px;
+}
+
+div#logo_accueil {
+    width: 300px;
+    height: 300px;
+    margin-left: 750px;
+    margin-top: 100px;
+}

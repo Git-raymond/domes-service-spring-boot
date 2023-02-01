@@ -33,8 +33,14 @@
 	<br>
 	<br>
 
-	<h1 class="text-center">PAGE D'ACCUEIL JADE</h1>
+	<h1 class="text-center">PAGE D'ACCUEIL</h1>
 	<p class="text-center">test</p>
+
+	<div id =logo_accueil>
+	
+	<img src="/images/logos/logo.png" alt="Logo Domes"/>
+	
+	</div>
 
 	<footer class="footer">
 		<div class="container">

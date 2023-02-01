@@ -30,8 +30,11 @@
 		</nav>
 	</header>
 	<br>
+	
+	
+	
 	<section id="login" class="section">
-		<div class="container tagline">
+		<div class="container login">
 		<h2 class="headline">PAGE D'AUTHENTIFICATION</h2>
 			<br><br>
 			<form action="#" method="post">

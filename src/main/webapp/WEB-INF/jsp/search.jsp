@@ -33,7 +33,7 @@
 	<br>
 	<section id="search" class="section">
 		<header class="imageheader"></header>
-		<div class="container">
+		<div class="container-animal">
 			<h2 class="headline">Recherche d'un animal</h2>
 			<br>
 			<br>
