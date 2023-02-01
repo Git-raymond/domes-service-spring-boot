@@ -11,3 +11,4 @@ target/*
 .idea/
 .eclipse
 .DS_Store
+application.properties
