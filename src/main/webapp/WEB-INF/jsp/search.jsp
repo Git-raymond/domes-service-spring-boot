@@ -37,11 +37,13 @@
 			<h2 class="headline">Recherche d'un animal</h2>
 			<br>
 			<br>
+			
 			<form action="/search" method="get">
 				<label class="card-title">Trouver votre animal par son
 					surnom (par exemple: Tecky)</label> <input path="search" name="search" value=""> <input
 					type="submit" value="Search">
 			</form>
+			
 		</div>
 		<br>
 	</section>
