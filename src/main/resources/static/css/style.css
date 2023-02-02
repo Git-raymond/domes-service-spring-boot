@@ -16,15 +16,13 @@
     background-color: white;
 }
 .container.login {
-    width: 400px;
-    height: 300px;
+  height: auto;
     margin: auto;
     border: 6px solid;
     border-color: darkorange;
     border-radius: 15px;
     background-color: aliceblue;
-    margin-top: 350px;
-}
+    margin-top: auto;
 }
 .bg-body-tertiary {
     --bs-bg-opacity: 1;
@@ -71,4 +69,8 @@ div#logo_accueil {
     height: 300px;
     margin-left: 750px;
     margin-top: 100px;
+}
+
+.search {
+    margin-left: 100px;
 }
