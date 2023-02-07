@@ -14,8 +14,9 @@ public class ApplicationConfig extends WebMvcConfigurationSupport {
 
 	@Override
 	protected void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("css/**", "images/**").addResourceLocations("classpath:/static/css/",
-				"classpath:/static/images/");
+		registry.addResourceHandler("css/**", "fonts/**", "images/**", "js/**", "scss/**", "vendor/**")
+				.addResourceLocations("classpath:/static/css/", "classpath:/static/fonts/", "classpath:/static/images/",
+						"classpath:/static/js/", "classpath:/static/scss/", "classpath:/static/vendor/");
 	}
 
 	@Bean

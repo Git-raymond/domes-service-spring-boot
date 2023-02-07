@@ -52,9 +52,8 @@
 				<div class="productContainer">
 
 					<div class="productContainerItem px-5">
-						<img width="200px" id="pic1"
-							src="/images/animaux/chiens/dachshund_640.jpg"> <input
-							type="text" name="animal" value="${animal.surnom}"><br />
+						<img width="200px" id="pic1" src="${animal.imageAnimal}"> 
+						<input type="text" name="animal" value="${animal.surnom}"><br />
 						<br>
 
 					</div>
