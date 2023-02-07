@@ -49,7 +49,7 @@ body {
 
 	<section id="registration" class="section text-center">
 		<div class="container tagline">
-			<h2 class="headline">PAGE D'INSCRIPTION</h2>
+			<h2 class="headline">PAGE D'INSCRIPTION EN TRAVAUX</h2>
 			<em>(*Champs obligatoires)</em><br /> <br>
 			<form:form method="post" action="/registerUser"
 				modelAttribute="newuser">
