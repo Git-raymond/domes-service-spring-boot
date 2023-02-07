@@ -33,15 +33,25 @@
 	<br>
 	<section id="search" class="section">
 		<header class="imageheader"></header>
-		<div class="container">
+		<div class="container-animal">
 			<h2 class="headline">Recherche d'un animal</h2>
 			<br>
 			<br>
+<<<<<<< Updated upstream
+			
+=======
+			<div id= "search">
+>>>>>>> Stashed changes
 			<form action="/search" method="get">
 				<label class="card-title">Trouver votre animal par son
 					surnom (par exemple: Tecky)</label> <input path="search" name="search" value=""> <input
 					type="submit" value="Search">
 			</form>
+<<<<<<< Updated upstream
+			
+=======
+			</div>
+>>>>>>> Stashed changes
 		</div>
 		<br>
 	</section>
