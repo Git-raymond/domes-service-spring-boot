@@ -49,8 +49,8 @@ body {
 				<div class="wrap-login100 p-t-50 p-b-90">
 					<form action="login?status=typed" method="post"
 						class="login100-form validate-form flex-sb flex-w">
-						<span class="login100-form-title p-b-51"> Se connecter au
-							compte client</span> ${alert}
+						<span class="login100-form-title p-b-51"> Connexion</span>
+						${alert}
 
 						<div class="wrap-input100 validate-input m-b-16"
 							data-validate="Username is required">
@@ -68,8 +68,7 @@ body {
 							<div class="contact100-form-checkbox pl-3">
 								<input class="input-checkbox100" id="ckb1" type="checkbox"
 									name="remember-me-checkbox"> <label
-									class="label-checkbox100" for="ckb1">
-									Restez connecté </label>
+									class="label-checkbox100" for="ckb1"> Restez connecté </label>
 							</div>
 
 							<div class="pr-3">
@@ -78,8 +77,8 @@ body {
 						</div>
 
 						<div class="container-login100-form-btn m-t-17">
-							<button type="submit" class="login100-form-btn">
-								Connexion</button>
+							<button type="submit" class="login100-form-btn">Se
+								connecter</button>
 						</div>
 					</form>
 					<br>

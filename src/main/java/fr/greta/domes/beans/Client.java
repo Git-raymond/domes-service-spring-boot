@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -21,6 +22,7 @@ public class Client {
 	@NotEmpty(message = "Le champ prénom ne peut pas être vide")
 	private String prenom;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@NotNull(message = "Le champ date de naissance ne peut pas être vide")
 	private Date dateNaissance;
 	@NotEmpty(message = "Le champ email ne peut pas être vide")
 	private String email;
