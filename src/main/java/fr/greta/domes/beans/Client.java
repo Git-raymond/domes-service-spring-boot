@@ -16,25 +16,25 @@ public class Client {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int IdClient;
 	// @Size(min = 6, message = "la taille doit etre inferieure a six")
-	@NotEmpty(message = "Le nom ne peut pas être vide")
+	@NotEmpty(message = "Le champ nom ne peut pas être vide")
 	private String nom;
-	@NotEmpty(message = "Le prénom ne peut pas être vide")
+	@NotEmpty(message = "Le champ prénom ne peut pas être vide")
 	private String prenom;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dateNaissance;
-	@NotEmpty(message = "L'\'email ne peut pas être vide")
+	@NotEmpty(message = "Le champ email ne peut pas être vide")
 	private String email;
 	@Pattern(regexp = "((?=.*[A-Z]).{6,10})", message = "Le mot de passe doit avoir une majuscule, une minuscule et doit comporter entre 6 et 10 caractères")
 	private String password;
-	@NotEmpty(message = "Le numéro de tél. ne peut pas être vide")
+	@NotEmpty(message = "Le champ numéro de tél. ne peut pas être vide")
 	private String telephone;
-	@NotEmpty(message = "L'\'adresse ne peut pas être vide")
+	@NotEmpty(message = "Le champ adresse ne peut pas être vide")
 	private String adresse;
 	private String adresseLivraison;
-	@NotEmpty(message = "La ville ne peut pas être vide")
+	@NotEmpty(message = "Le champ ville ne peut pas être vide")
 	private String ville;
 	private String villeLivraison;
-	@NotEmpty(message = "Le code postal ne peut pas être vide")
+	@NotEmpty(message = "Le champ code postal ne peut pas être vide")
 	private String codePostal;
 	private String codePostalLivraison;
 

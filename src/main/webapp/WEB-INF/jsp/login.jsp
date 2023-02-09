@@ -32,10 +32,10 @@
 <link rel="stylesheet" href="css/owl.theme.default.min.css">
 <link rel="stylesheet" href="css/aos.css">
 <link rel="stylesheet" href="css/style.css">
-    <style>
+<style>
 body {
-  background-image: url("images/logos/background_animal.png");
-  background-size: cover;
+	background-image: url("images/logos/background_animal.png");
+	background-size: cover;
 }
 </style>
 </head>
@@ -49,7 +49,8 @@ body {
 				<div class="wrap-login100 p-t-50 p-b-90">
 					<form action="login?status=typed" method="post"
 						class="login100-form validate-form flex-sb flex-w">
-						<span class="login100-form-title p-b-51"> Se connecter au compte client</span> ${alert}
+						<span class="login100-form-title p-b-51"> Se connecter au
+							compte client</span> ${alert}
 
 						<div class="wrap-input100 validate-input m-b-16"
 							data-validate="Username is required">
@@ -64,13 +65,14 @@ body {
 						</div>
 
 						<div class="flex-sb-m w-full p-t-3 p-b-24">
-							<div class="contact100-form-checkbox">
+							<div class="contact100-form-checkbox pl-3">
 								<input class="input-checkbox100" id="ckb1" type="checkbox"
 									name="remember-me-checkbox"> <label
-									class="label-checkbox100" for="ckb1"> Restez connecté </label>
+									class="label-checkbox100" for="ckb1">
+									Restez connecté </label>
 							</div>
 
-							<div>
+							<div class="pr-3">
 								<a href="#" class="txt1"> Mot de passe oublié? </a>
 							</div>
 						</div>
@@ -80,21 +82,22 @@ body {
 								Connexion</button>
 						</div>
 					</form>
+					<br>
+					<div class="text-center">
+						<p class="txt1" style="color: #999999">
+							Nouveau client? <a href="/goToRegister" class="txt1">
+								S'inscrire ici </a>
+						</p>
+					</div>
 				</div>
 
-				<div class="text-center">
-					<p class="txt1" style="color: #999999">
-						Nouveau client? <a href="/goToRegister" class="txt1">
-							S'inscrire ici </a>
-					</p>
-				</div>
 			</div>
 		</div>
 	</div>
 
 	<div id="dropDownSelect1"></div>
 	<jsp:include page="templates/footer.jsp" />
-	
+
 	<jsp:include page="templates/scripts.jsp" />
 
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>

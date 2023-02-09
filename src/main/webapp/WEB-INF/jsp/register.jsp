@@ -47,187 +47,148 @@ body {
 <body>
 	<jsp:include page="templates/header.jsp" />
 
-	<section id="registration" class="section text-center">
-		<div class="container tagline">
-			<h2 class="headline">PAGE D'INSCRIPTION EN TRAVAUX</h2>
-			<em>(*Champs obligatoires)</em><br /> <br>
-			<form:form method="post" action="/registerUser"
-				modelAttribute="newuser">
-				<label>Nom*</label>
-				<form:input path="nom" type="text" />
-				<form:errors path="nom" cssClass="error" />
-				<br />
-				<label>Prénom*</label>
-				<form:input path="prenom" type="text" />
-				<form:errors path="prenom" cssClass="error" />
-				<br />
-				<label>Date de naissance*</label>
-				<form:input path="dateNaissance" type="date" />
-				<form:errors path="dateNaissance" cssClass="error" />
-				<br />
-				<label>Téléphone*</label>
-				<form:input path="telephone" type="text" />
-				<form:errors path="telephone" cssClass="error" />
-				<br />
-				<label>Adresse*</label>
-				<form:input path="adresse" type="text" />
-				<form:errors path="adresse" cssClass="error" />
-				<br />
-				<label>Ville*</label>
-				<form:input path="ville" type="text" />
-				<form:errors path="ville" cssClass="error" />
-				<br />
-				<label>Code postal*</label>
-				<form:input path="codePostal" type="text" />
-				<form:errors path="codePostal" cssClass="error" />
-				<br />
-				<label>Adresse de livraison</label>
-				<form:input path="adresseLivraison" type="text" />
-				<br />
-				<label>Ville de livraison</label>
-				<form:input path="villeLivraison" type="text" />
-				<br />
-				<label>Code postal de livraison</label>
-				<form:input path="codePostalLivraison" type="text" />
-				<br />
-				<label>Email*</label>
-				<form:input path="email" type="text" />
-				<form:errors path="email" cssClass="error" />
-				<br />
-				<label>Password*</label>
-				<form:input path="password" type="password" />
-				<form:errors path="password" cssClass="error" />
-				<br />
-				<label>(Le mot de passe doit avoir une majuscule, une
-					minuscule et doit comporter entre 6 et 10 caractères)</label>
-				<br />
-				<input type="submit" value="S'inscrire" id="submit">
-			</form:form>
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="shadow-lg p-2 p-lg-5 rounded" data-aos="fade-up">
+				<div class="wrap-login100 p-t-50 p-b-90">
+					<form:form action="/registerUser" method="post"
+						modelAttribute="newuser"
+						class="login100-form validate-form flex-sb flex-w justify-content-center"
+						enctype="multipart/form-data">
+						<span class="login100-form-title m-b-20"> Inscription </span>
+
+						${alert}
+
+						<div class="m-b-16">
+							<label class="m-0" for="imgInp">
+								<figure class="d-flex justify-content-center m-0">
+									<img id="blah" src="images/blank_avatar.png" alt="your image"
+										style="border-radius: 50%; height: 8em; width: 8em">
+								</figure>
+								<figcaption>Clickez ici pour changer votre image de
+									profil</figcaption>
+							</label> <input name="profile-image" type="file" id="imgInp"
+								style="display: none;">
+						</div>
+						<div class="wrap-input100 m-b-16">
+							<span class="text-center font-italic px-5">(* Champs
+								obligatoires)</span> <span class="focus-input100"></span>
+						</div>
+						<div class="wrap-input100 m-b-16">
+							<form:input path="nom" type="text" class="input100"
+								placeholder="Nom*" />
+							<span class="focus-input100"></span>
+							<div class="pl-3">
+								<form:errors path="nom" cssClass="error" />
+							</div>
+						</div>
+						<div class="wrap-input100 m-b-16">
+							<form:input path="prenom" type="text" class="input100"
+								placeholder="Prénom*" />
+							<span class="focus-input100"></span>
+							<div class="pl-3">
+								<form:errors path="prenom" cssClass="error" />
+							</div>
+						</div>
+						<div class="wrap-input100 m-b-16">
+							<h5 class="pl-4 pt-3">Date de naissance*</h5>
+							<form:input path="dateNaissance" type="date" class="input100" />
+							<span class="focus-input100"></span>
+							<div class="pl-3">
+								<form:errors path="dateNaissance" cssClass="error" />
+							</div>
+						</div>
+						<div class="wrap-input100 m-b-16">
+							<form:input path="telephone" type="text" class="input100"
+								placeholder="Téléphone*" />
+							<span class="focus-input100"></span>
+							<div class="pl-3">
+								<form:errors path="telephone" cssClass="error" />
+							</div>
+						</div>
+						<div class="wrap-input100 m-b-16">
+							<form:input path="adresse" type="text" class="input100"
+								placeholder="Adresse*" />
+							<span class="focus-input100"></span>
+							<div class="pl-3">
+								<form:errors path="adresse" cssClass="error" />
+							</div>
+						</div>
+						<div class="wrap-input100 m-b-16">
+							<form:input path="ville" type="text" class="input100"
+								placeholder="Ville*" />
+							<span class="focus-input100"></span>
+							<div class="pl-3">
+								<form:errors path="ville" cssClass="error" />
+							</div>
+						</div>
+						<div class="wrap-input100 m-b-16">
+							<form:input path="codePostal" type="text" class="input100"
+								placeholder="Code postal*" />
+							<span class="focus-input100"></span>
+							<div class="pl-3">
+								<form:errors path="codePostal" cssClass="error" />
+							</div>
+						</div>
+						<div class="wrap-input100 m-b-16">
+							<form:input path="adresseLivraison" type="text" class="input100"
+								placeholder="Adresse de livraison" />
+							<span class="focus-input100"></span>
+						</div>
+						<div class="wrap-input100 m-b-16">
+							<form:input path="villeLivraison" type="text" class="input100"
+								placeholder="Ville de livraison" />
+							<span class="focus-input100"></span>
+						</div>
+						<div class="wrap-input100 m-b-16">
+							<form:input path="codePostalLivraison" type="text"
+								class="input100" placeholder="Code postal de livraison" />
+							<span class="focus-input100"></span>
+						</div>
+						<div class="wrap-input100 m-b-16">
+							<form:input path="email" type="text" class="input100"
+								placeholder="Email*" />
+							<span class="focus-input100"></span>
+							<div class="pl-3">
+								<form:errors path="email" cssClass="error" />
+							</div>
+						</div>
+						<div class="wrap-input100 m-b-16">
+							<form:input path="password" type="password" class="input100"
+								placeholder="Mot de passe*" />
+							<label class="pl-3">(Le mot de passe doit avoir une
+								majuscule, une minuscule et doit comporter entre 6 et 10
+								caractères)</label> <span class="focus-input100"></span>
+							<div class="pl-3">
+								<form:errors path="password" cssClass="error" />
+							</div>
+						</div>
+						<!--                     <div class="wrap-input100 validate-input m-b-16" data-validate="Le mot de passe est requis"> -->
+						<%--                         <form:input class="input100" type="password" path="repeat-password" --%>
+						<%--                                placeholder="Confirmer le mot de passe"/> --%>
+						<%--                                <form:errors path="repeat-password" cssClass="error" /> --%>
+						<!--                         <span class="focus-input100"></span> -->
+						<!--                     </div> -->
+
+						<div class="container-login100-form-btn m-t-17">
+							<button type="submit" class="login100-form-btn">S'inscrire
+							</button>
+						</div>
+					</form:form>
+					<br>
+					<div class="text-center">
+						<p class="txt1" style="color: #999999">
+							Déjà client? <a href="/GoLogin" class="txt1"> Se connecter
+								ici</a>
+						</p>
+					</div>
+				</div>
+
+
+			</div>
 		</div>
-		<div class="text-center">
-			<p class="txt1" style="color: #999999">
-				Déjà client? <a href="/GoLogin" class="txt1"> Se connecter ici</a>
-			</p>
-		</div>
-	</section>
-
-	<!-- <div class="limiter"> -->
-	<!-- 		<div class="container-login100"> -->
-	<!-- 			<div class="shadow-lg p-2 p-lg-5 rounded" data-aos="fade-up"> -->
-	<!-- 				<div class="wrap-login100 p-t-50 p-b-90"> -->
-	<%-- 					<form action="/registerUser" method="post" modelAttribute="newuser" --%>
-	<%-- 						class="login100-form validate-form flex-sb flex-w justify-content-center" --%>
-	<%-- 						enctype="multipart/form-data"> --%>
-	<!-- 						<span class="login100-form-title m-b-20"> Inscription </span> -->
-
-	<%-- 						${alert} --%>
-
-	<!-- 						<div class="m-b-16"> -->
-	<!-- 							<label class="m-0" for="imgInp"> -->
-	<!-- 								<figure class="d-flex justify-content-center m-0"> -->
-	<!-- 									<img id="blah" src="images/blank_avatar.png" alt="your image" -->
-	<!-- 										style="border-radius: 50%; height: 8em; width: 8em"> -->
-	<!-- 								</figure> -->
-	<!-- 								<figcaption>Clickez ici pour changer votre image de -->
-	<!-- 									profil</figcaption> -->
-	<!-- 							</label> <input name="profile-image" type="file" id="imgInp" -->
-	<!-- 								style="display: none;"> -->
-	<!-- 						</div> -->
-
-	<!--  					<div class="wrap-input100 validate-input m-b-16" data-validate="Le nom est requis"> -->
-	<%--                         <form:input class="input100" type="text" path="nom" placeholder="Nom"/> --%>
-	<%--                         <form:errors path="nom" cssClass="error" /> --%>
-	<!--                         <span class="focus-input100"></span>  -->
-	<!--                     </div>          -->
-	<!--                      <div class="wrap-input100 validate-input m-b-16" data-validate="Le prénom est requis"> -->
-	<%--                         <form:input class="input100" type="text" path="prenom" placeholder="Prénom"/> --%>
-	<%--                         <form:errors path="prenom" cssClass="error" /> --%>
-	<!--                         <span class="focus-input100"></span> -->
-	<!--                     </div> -->
-	<!--                       <div class="wrap-input100 validate-input m-b-16" data-validate="La date de naissance est requise"> -->
-	<%--                         <form:input class="input100" type="text" path="dateNaissance" placeholder="Date de naissance"/> --%>
-	<%--                         <form:errors path="dateNaissance" cssClass="error" /> --%>
-	<!--                         <span class="focus-input100"></span> -->
-	<!--                     </div> -->
-	<!--                       <div class="wrap-input100 validate-input m-b-16" data-validate="Le téléphone est requis"> -->
-	<%--                         <form:input class="input100" type="text" path="telephone" placeholder="Téléphone"/> --%>
-	<%--                         <form:errors path="telephone" cssClass="error" /> --%>
-	<!--                         <span class="focus-input100"></span> -->
-	<!--                     </div> -->
-	<!--                       <div class="wrap-input100 validate-input m-b-16" data-validate="L'adresse est requise"> -->
-	<%--                         <form:input class="input100" type="text" path="adresse" placeholder="Adresse"/> --%>
-	<%--                         <form:errors path="adresse" cssClass="error" /> --%>
-	<!--                         <span class="focus-input100"></span> -->
-	<!--                     </div> -->
-	<!--                       <div class="wrap-input100 validate-input m-b-16" data-validate="La ville requise"> -->
-	<%--                         <form:input class="input100" type="text" path="ville" placeholder="Ville"/> --%>
-	<%--                         <form:errors path="ville" cssClass="error" /> --%>
-	<!--                         <span class="focus-input100"></span> -->
-	<!--                     </div> -->
-	<!--                       <div class="wrap-input100 validate-input m-b-16" data-validate="Le code postal est requis"> -->
-	<%--                         <form:input class="input100" type="text" path="codePostal" placeholder="Code postal"/> --%>
-	<%--                         <form:errors path="codePostal" cssClass="error" /> --%>
-	<!--                         <span class="focus-input100"></span> -->
-	<!--                     </div> -->
-	<!--                       <div class="wrap-input100 validate-input m-b-16" data-validate="L'adresse de livraison est requise"> -->
-	<%--                         <form:input class="input100" type="text" path="adresseLivraison" placeholder="Adresse de livraison"/> --%>
-	<%-- <%--                         <form:errors path="adresseLivraison" cssClass="error" /> --%>
-	--%>
-	<!--                         <span class="focus-input100"></span> -->
-	<!--                     </div> -->
-	<!--                       <div class="wrap-input100 validate-input m-b-16" data-validate="La ville de livraison est requise"> -->
-	<%--                         <form:input class="input100" type="text" path="villeLivraison" placeholder="Ville de livraison"/> --%>
-	<%-- <%--                         <form:errors path="villeLivraison" cssClass="error" /> --%>
-	--%>
-	<!--                         <span class="focus-input100"></span> -->
-	<!--                     </div> -->
-	<!--                       <div class="wrap-input100 validate-input m-b-16" data-validate="Le code postal de livraison est requis"> -->
-	<%--                         <form:input class="input100" type="text" path="codePostalLivraison" placeholder="Code postal de livraison"/> --%>
-	<%-- <%--                         <form:errors path="codePostalLivraison" cssClass="error" /> --%>
-	--%>
-	<!--                         <span class="focus-input100"></span> -->
-	<!--                     </div> -->
-	<!--                       <div class="wrap-input100 validate-input m-b-16" data-validate="L'adresse email est requise"> -->
-	<%--                         <form:input class="input100" type="text" path="nom" placeholder="Nom"/> --%>
-	<%--                         <form:errors path="nom" cssClass="error" /> --%>
-	<!--                         <span class="focus-input100"></span> -->
-	<!--                     </div> -->
-
-	<!--                     <div class="wrap-input100 validate-input m-b-16" data-validate="Le mot de passe est requis"> -->
-	<%--                         <form:input class="input100" type="password" path="password" placeholder="Password"/> --%>
-	<%--                         <form:errors path="password" cssClass="error" /> --%>
-	<!--                         <span class="focus-input100"></span> -->
-	<!--                     </div> -->
-
-	<!-- <!--                     <div class="wrap-input100 validate-input m-b-16" data-validate="Le mot de passe est requis"> -->
-	-->
-	<%-- <%--                         <form:input class="input100" type="password" path="repeat-password" --%>
-	--%>
-	<%-- <%--                                placeholder="Confirmer le mot de passe"/> --%>
-	--%>
-	<%-- <%--                                <form:errors path="repeat-password" cssClass="error" /> --%>
-	--%>
-	<!-- <!--                         <span class="focus-input100"></span> -->
-	-->
-	<!-- <!--                     </div> -->
-	-->
-
-
-	<!-- 						<div class="container-login100-form-btn m-t-17"> -->
-	<!-- 							<button type="submit" class="login100-form-btn">S'inscrire -->
-	<!-- 							</button> -->
-	<!-- 						</div> -->
-	<%-- 					</form> --%>
-	<!-- 				</div> -->
-
-	<!-- 				<div class="text-center"> -->
-	<!-- 					<p class="txt1" style="color: #999999"> -->
-	<!-- 						Déjà client? <a href="/GoLogin" class="txt1"> Se connecter ici</a> -->
-	<!-- 					</p> -->
-	<!-- 				</div> -->
-	<!-- 			</div> -->
-	<!-- 		</div> -->
-	<!-- 	</div> -->
+	</div>
 
 	<br>
 	<br>
