@@ -1,11 +1,19 @@
-package fr.greta.domes.beans;
+package fr.greta.domes.entity;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -13,38 +21,68 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Client {
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int IdClient;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long IdClient;
+
 	// @Size(min = 6, message = "la taille doit etre inferieure a six")
 	@NotEmpty(message = "Le champ nom ne peut pas être vide")
+//	@Pattern(regexp = "^([a-zA-Z]{2,}\\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\\s?([a-zA-Z]{1,})?)", message = "Format de caractère non autorisé")
 	private String nom;
+
 	@NotEmpty(message = "Le champ prénom ne peut pas être vide")
 	private String prenom;
+
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Temporal(TemporalType.DATE)
 	@NotNull(message = "Le champ date de naissance ne peut pas être vide")
 	private Date dateNaissance;
+
 	@NotEmpty(message = "Le champ email ne peut pas être vide")
 	private String email;
+
 	@Pattern(regexp = "((?=.*[A-Z]).{6,10})", message = "Le mot de passe doit avoir une majuscule, une minuscule et doit comporter entre 6 et 10 caractères")
 	private String password;
+
 	@NotEmpty(message = "Le champ numéro de tél. ne peut pas être vide")
 	private String telephone;
+
 	@NotEmpty(message = "Le champ adresse ne peut pas être vide")
 	private String adresse;
-	private String adresseLivraison;
+
 	@NotEmpty(message = "Le champ ville ne peut pas être vide")
 	private String ville;
-	private String villeLivraison;
+
 	@NotEmpty(message = "Le champ code postal ne peut pas être vide")
 	private String codePostal;
-	private String codePostalLivraison;
 
-	public int getIdClient() {
+	@OneToMany(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "client_id")
+	private List<AdresseLivraisonClient> adresseLivraisonClient = new ArrayList<AdresseLivraisonClient>(Arrays.asList(new AdresseLivraisonClient()));
+
+	public Client() {
+
+	}
+
+	public Client(String nom, String prenom, Date dateNaissance, String email, String password, String telephone,
+			String adresse, String ville, String codePostal) {
+		this.nom = nom;
+		this.prenom = prenom;
+		this.dateNaissance = dateNaissance;
+		this.email = email;
+		this.password = password;
+		this.telephone = telephone;
+		this.adresse = adresse;
+		this.ville = ville;
+		this.codePostal = codePostal;
+	}
+
+	public Long getIdClient() {
 		return IdClient;
 	}
 
-	public void setIdClient(int idClient) {
+	public void setIdClient(Long idClient) {
 		IdClient = idClient;
 	}
 
@@ -104,28 +142,12 @@ public class Client {
 		this.adresse = adresse;
 	}
 
-	public String getAdresseLivraison() {
-		return adresseLivraison;
-	}
-
-	public void setAdresseLivraison(String adresseLivraison) {
-		this.adresseLivraison = adresseLivraison;
-	}
-
 	public String getVille() {
 		return ville;
 	}
 
 	public void setVille(String ville) {
 		this.ville = ville;
-	}
-
-	public String getVilleLivraison() {
-		return villeLivraison;
-	}
-
-	public void setVilleLivraison(String villeLivraison) {
-		this.villeLivraison = villeLivraison;
 	}
 
 	public String getCodePostal() {
@@ -136,12 +158,14 @@ public class Client {
 		this.codePostal = codePostal;
 	}
 
-	public String getCodePostalLivraison() {
-		return codePostalLivraison;
+	public List<AdresseLivraisonClient> getAdresseLivraisonClient() {
+		return adresseLivraisonClient;
 	}
 
-	public void setCodePostalLivraison(String codePostalLivraison) {
-		this.codePostalLivraison = codePostalLivraison;
+	public void setAdresseLivraisonClient(List<AdresseLivraisonClient> adresseLivraisonClient) {
+		this.adresseLivraisonClient = adresseLivraisonClient;
 	}
+
+
 
 }

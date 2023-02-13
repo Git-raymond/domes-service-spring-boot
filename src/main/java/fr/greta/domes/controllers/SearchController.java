@@ -9,7 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import fr.greta.domes.beans.Animal;
+import fr.greta.domes.entity.Animal;
 import fr.greta.domes.repository.AnimalRepository;
 
 @Controller

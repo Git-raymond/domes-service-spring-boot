@@ -1,4 +1,4 @@
-package fr.greta.domes.beans;
+package fr.greta.domes.entity;
 
 public class LigneCommande {
 

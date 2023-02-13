@@ -9,7 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import fr.greta.domes.beans.Client;
+import fr.greta.domes.entity.Client;
 import fr.greta.domes.repository.ClientRepository;
 
 @Controller

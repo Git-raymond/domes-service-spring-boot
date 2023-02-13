@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
-import fr.greta.domes.beans.Animal;
+import fr.greta.domes.entity.Animal;
 
 public interface AnimalRepository extends CrudRepository<Animal, Integer> {
 	@Query("Select a from Animal a where a.surnom like %:surnom%")

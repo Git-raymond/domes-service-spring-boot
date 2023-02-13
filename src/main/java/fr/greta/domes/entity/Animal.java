@@ -1,4 +1,4 @@
-package fr.greta.domes.beans;
+package fr.greta.domes.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
