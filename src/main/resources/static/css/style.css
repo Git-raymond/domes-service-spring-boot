@@ -747,7 +747,45 @@ a {
   font-size: 15px;
   letter-spacing: .1em; }
 
-.block-38 .block-38-header img {
-  width: 120px;
-  border-radius: 50%;
-  margin-bottom: 20px; }
+
+input.submit_contact {
+
+    margin-left: 180px;
+    margin-bottom: 5px;
+}
+
+  .cont{
+        display: flex;
+        width: 100%;
+        margin-left: 55%;
+      }
+      .box {
+       
+       
+        text-align: center;
+        margin-left :1%;
+      }
+      
+div#map {
+    margin-top: 10%;
+}
+
+
+div#form_contact {
+    
+    margin-top: 10%;
+}
+
+h1.mb-2 {
+    font-size: x-large;
+}
+
+
+label.form-label {
+    color: black;
+}
+
+li {
+    color: black;
+}
+
