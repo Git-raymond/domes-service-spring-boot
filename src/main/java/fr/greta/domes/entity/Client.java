@@ -59,7 +59,7 @@ public class Client {
 
 	@OneToMany(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "client_id")
-	private List<AdresseLivraisonClient> adresseLivraisonClient = new ArrayList<AdresseLivraisonClient>(Arrays.asList(new AdresseLivraisonClient()));
+	private List<AdresseLivraison> adresseLivraison = new ArrayList<AdresseLivraison>(Arrays.asList(new AdresseLivraison()));
 
 	public Client() {
 
@@ -158,12 +158,12 @@ public class Client {
 		this.codePostal = codePostal;
 	}
 
-	public List<AdresseLivraisonClient> getAdresseLivraisonClient() {
-		return adresseLivraisonClient;
+	public List<AdresseLivraison> getAdresseLivraison() {
+		return adresseLivraison;
 	}
 
-	public void setAdresseLivraisonClient(List<AdresseLivraisonClient> adresseLivraisonClient) {
-		this.adresseLivraisonClient = adresseLivraisonClient;
+	public void setAdresseLivraison(List<AdresseLivraison> adresseLivraison) {
+		this.adresseLivraison = adresseLivraison;
 	}
 
 

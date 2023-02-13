@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
 @Entity
-public class AdresseLivraisonClient {
+public class AdresseLivraison {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,10 +30,10 @@ public class AdresseLivraisonClient {
 
 
 
-	public AdresseLivraisonClient() {
+	public AdresseLivraison() {
 	}
 
-	public AdresseLivraisonClient(String adresseLivraison, String villeLivraison, String codePostalLivraison) {
+	public AdresseLivraison(String adresseLivraison, String villeLivraison, String codePostalLivraison) {
 		this.adresseLivraison = adresseLivraison;
 		this.villeLivraison = villeLivraison;
 		this.codePostalLivraison = codePostalLivraison;
@@ -74,7 +74,7 @@ public class AdresseLivraisonClient {
 
 	@Override
 	public String toString() {
-		return "AdresseLivraisonClient [idAdresseLivraison=" + idAdresseLivraison + ", adresseLivraison="
+		return "AdresseLivraison [idAdresseLivraison=" + idAdresseLivraison + ", adresseLivraison="
 				+ adresseLivraison + ", villeLivraison=" + villeLivraison + ", codePostalLivraison="
 				+ codePostalLivraison + "]";
 	}

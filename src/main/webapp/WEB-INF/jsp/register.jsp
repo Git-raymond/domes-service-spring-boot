@@ -132,17 +132,17 @@ body {
 							</div>
 						</div>
 						<div class="wrap-input100 m-b-16">
-							<form:input path="adresseLivraisonClient[0].adresseLivraison" type="text"
+							<form:input path="adresseLivraison[0].adresseLivraison" type="text"
 								class="input100" placeholder="Adresse de livraison" />
 							<span class="focus-input100"></span>
 						</div>
 						<div class="wrap-input100 m-b-16">
-							<form:input path="adresseLivraisonClient[0].villeLivraison" type="text"
+							<form:input path="adresseLivraison[0].villeLivraison" type="text"
 								class="input100" placeholder="Ville de livraison" />
 							<span class="focus-input100"></span>
 						</div>
 						<div class="wrap-input100 m-b-16">
-							<form:input path="adresseLivraisonClient[0].codePostalLivraison"
+							<form:input path="adresseLivraison[0].codePostalLivraison"
 								type="text" class="input100"
 								placeholder="Code postal de livraison" />
 							<span class="focus-input100"></span>
