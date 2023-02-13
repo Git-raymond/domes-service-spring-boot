@@ -61,24 +61,24 @@ public class Client {
 	@NotEmpty(message = "Le champ code postal ne peut pas être vide")
 	private String codePostal;
 
-//	public enum Statut {
-//		ACTIVE, DESACTIVE
-//	}
-//
-//	@Enumerated(EnumType.STRING)
-//	private String statut;
+	public enum Statut {
+		ACTIVE, DESACTIVE
+	}
+
+	@Enumerated(EnumType.STRING)
+	private Statut statut = Statut.ACTIVE;
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	@Column(nullable = false)
 	private Date dateCreation;
-	
+
 	@PrePersist
 	private void onCreate() {
-	    dateCreation = new Date();
+		dateCreation = new Date();
 	}
 
-	@OneToMany(cascade = CascadeType.PERSIST)
+	@OneToMany(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
 	@JoinColumn(name = "client_id")
 	private List<AdresseLivraison> adresseLivraison = new ArrayList<AdresseLivraison>(
 			Arrays.asList(new AdresseLivraison()));
@@ -182,13 +182,14 @@ public class Client {
 		this.codePostal = codePostal;
 	}
 
-//	public String getStatut() {
-//		return statut;
-//	}
-//
-//	public void setStatut(String statut) {
-//		this.statut = statut;
-//	}
+	
+	public Statut getStatut() {
+		return statut;
+	}
+
+	public void setStatut(Statut statut) {
+		this.statut = statut;
+	}
 
 	public Date getDateCreation() {
 		return dateCreation;
