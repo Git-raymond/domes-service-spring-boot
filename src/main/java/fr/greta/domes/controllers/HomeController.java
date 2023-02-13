@@ -14,7 +14,21 @@ public class HomeController {
 		System.out.println("page d'accueil");
 		return "index";
 	}
-
+	
+	@GetMapping("/AboutUs")
+	public String goAboutUs() {
+		System.out.println("page d'accueil");
+		return "aboutus";
+	}
+	
+	@GetMapping("/contact")
+	public String goContact() {
+		System.out.println("page contact");
+		return "contact";
+	}
+	
+	
+	
 	@GetMapping("/GoSearch")
 	public String goSearch() {
 		System.out.println("page de recherche");

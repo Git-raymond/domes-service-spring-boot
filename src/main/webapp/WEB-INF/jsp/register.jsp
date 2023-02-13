@@ -34,10 +34,6 @@
 <link rel="stylesheet" href="css/aos.css">
 <link rel="stylesheet" href="css/style.css">
 <style>
-body {
-	background-image: url("images/logos/background_animal.png");
-	background-size: cover;
-}
 
 .error {
 	color: #ff0000;
@@ -48,7 +44,7 @@ body {
 	<jsp:include page="templates/header.jsp" />
 
 
-	<div class="limiter">
+	<div class="limiter" style = "background-image: url(images/logos/bulldog_banner.jpg);">
 		<div class="container-login100">
 			<div class="shadow-lg p-2 p-lg-5 rounded" data-aos="fade-up">
 				<div class="wrap-login100 p-t-50 p-b-90">
