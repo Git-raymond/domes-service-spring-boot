@@ -27,9 +27,6 @@ public class AdresseLivraison {
 	@Size(max = 10)
 	private String codePostalLivraison;
 
-
-
-
 	public AdresseLivraison() {
 	}
 

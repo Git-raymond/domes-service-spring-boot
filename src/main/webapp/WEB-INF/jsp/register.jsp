@@ -132,8 +132,8 @@ body {
 							</div>
 						</div>
 						<div class="wrap-input100 m-b-16">
-							<form:input path="adresseLivraison[0].adresseLivraison" type="text"
-								class="input100" placeholder="Adresse de livraison" />
+							<form:input path="adresseLivraison[0].adresseLivraison"
+								type="text" class="input100" placeholder="Adresse de livraison" />
 							<span class="focus-input100"></span>
 						</div>
 						<div class="wrap-input100 m-b-16">

@@ -6,12 +6,16 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.PrePersist;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotEmpty;
@@ -57,16 +61,34 @@ public class Client {
 	@NotEmpty(message = "Le champ code postal ne peut pas être vide")
 	private String codePostal;
 
+//	public enum Statut {
+//		ACTIVE, DESACTIVE
+//	}
+//
+//	@Enumerated(EnumType.STRING)
+//	private String statut;
+
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Temporal(TemporalType.DATE)
+	@Column(nullable = false)
+	private Date dateCreation;
+	
+	@PrePersist
+	private void onCreate() {
+	    dateCreation = new Date();
+	}
+
 	@OneToMany(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "client_id")
-	private List<AdresseLivraison> adresseLivraison = new ArrayList<AdresseLivraison>(Arrays.asList(new AdresseLivraison()));
+	private List<AdresseLivraison> adresseLivraison = new ArrayList<AdresseLivraison>(
+			Arrays.asList(new AdresseLivraison()));
 
 	public Client() {
 
 	}
 
 	public Client(String nom, String prenom, Date dateNaissance, String email, String password, String telephone,
-			String adresse, String ville, String codePostal) {
+			String adresse, String ville, String codePostal, Date dateCreation) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.dateNaissance = dateNaissance;
@@ -76,6 +98,8 @@ public class Client {
 		this.adresse = adresse;
 		this.ville = ville;
 		this.codePostal = codePostal;
+
+		this.dateCreation = dateCreation;
 	}
 
 	public Long getIdClient() {
@@ -158,6 +182,22 @@ public class Client {
 		this.codePostal = codePostal;
 	}
 
+//	public String getStatut() {
+//		return statut;
+//	}
+//
+//	public void setStatut(String statut) {
+//		this.statut = statut;
+//	}
+
+	public Date getDateCreation() {
+		return dateCreation;
+	}
+
+	public void setDateCreation(Date dateCreation) {
+		this.dateCreation = dateCreation;
+	}
+
 	public List<AdresseLivraison> getAdresseLivraison() {
 		return adresseLivraison;
 	}
@@ -165,7 +205,5 @@ public class Client {
 	public void setAdresseLivraison(List<AdresseLivraison> adresseLivraison) {
 		this.adresseLivraison = adresseLivraison;
 	}
-
-
 
 }
