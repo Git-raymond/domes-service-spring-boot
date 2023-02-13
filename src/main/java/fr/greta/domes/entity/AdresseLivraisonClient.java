@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 @Entity
 public class AdresseLivraisonClient {
@@ -15,16 +16,18 @@ public class AdresseLivraisonClient {
 	private Long idAdresseLivraison;
 
 	@Column(length = 50, nullable = true)
-
+	@Size(max = 50)
 	private String adresseLivraison;
 
 	@Column(length = 50, nullable = true)
-
+	@Size(max = 50)
 	private String villeLivraison;
 
 	@Column(length = 10, nullable = true)
-
+	@Size(max = 10)
 	private String codePostalLivraison;
+
+
 
 
 	public AdresseLivraisonClient() {
@@ -67,6 +70,7 @@ public class AdresseLivraisonClient {
 	public void setCodePostalLivraison(String codePostalLivraison) {
 		this.codePostalLivraison = codePostalLivraison;
 	}
+
 
 	@Override
 	public String toString() {
