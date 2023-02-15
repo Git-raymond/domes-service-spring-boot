@@ -40,6 +40,9 @@
 }
 </style>
 <body>
+		<%
+		request.setAttribute("register_active", "active");
+		%>
 	<jsp:include page="templates/header.jsp" />
 
 

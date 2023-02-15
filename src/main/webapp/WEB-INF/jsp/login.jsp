@@ -36,7 +36,9 @@
 </style>
 </head>
 <body>
-
+	<%
+	request.setAttribute("login_active", "active");
+	%>
 	<jsp:include page="templates/header.jsp" />
 
 	<div class="limiter">

@@ -11,6 +11,9 @@ response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 
 <body>
 	<div class="site-wrap">
+			<%
+		request.setAttribute("home_active", "active");
+		%>
 		<jsp:include page="templates/header.jsp" />
 
 		<div class="site-blocks-cover"
