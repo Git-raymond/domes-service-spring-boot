@@ -6,7 +6,7 @@ response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 
 <!DOCTYPE html>
 <html lang="en">
-   <title>Accueil</title>
+<title>Accueil</title>
 <jsp:include page="templates/head.jsp" />
 
 <body>
@@ -46,7 +46,7 @@ response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 						</div>
 
 						<div class="text">
-							<h2 class="text-uppercase">Free Shipping</h2>
+							<h2 class="text-uppercase">Frais de livraison</h2>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 								Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
 						</div>
@@ -58,7 +58,7 @@ response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 							<span class="icon-refresh2"></span>
 						</div>
 						<div class="text">
-							<h2 class="text-uppercase">Free Returns</h2>
+							<h2 class="text-uppercase">Frais de retour</h2>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 								Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
 						</div>
@@ -70,7 +70,7 @@ response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 							<span class="icon-help"></span>
 						</div>
 						<div class="text">
-							<h2 class="text-uppercase">Customer Support</h2>
+							<h2 class="text-uppercase">Service Client</h2>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 								Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
 						</div>
@@ -92,7 +92,8 @@ response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 				</div>
 				<div class="row align-items-center">
 					<div class="col-md-12 col-lg-7 mb-5">
-						<a href="#"><img src="images/animaux/chats/cat-2536662_640.jpg"
+						<a href="#"><img
+							src="images/animaux/chats/cat-2536662_640.jpg"
 							alt="Image placeholder" class="img-fluid rounded"></a>
 					</div>
 					<div class="col-md-12 col-lg-5 text-center pl-md-5">
