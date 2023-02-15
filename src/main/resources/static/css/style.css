@@ -789,3 +789,7 @@ li {
     color: black;
 }
 
+	.shadow-lg.p-2.p-lg-5.rounded.aos-init.aos-animate {
+    height: 650px;
+    overflow: overlay;
+}
