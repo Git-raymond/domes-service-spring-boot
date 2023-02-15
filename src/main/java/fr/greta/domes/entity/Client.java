@@ -98,7 +98,6 @@ public class Client {
 		this.adresse = adresse;
 		this.ville = ville;
 		this.codePostal = codePostal;
-
 		this.dateCreation = dateCreation;
 	}
 

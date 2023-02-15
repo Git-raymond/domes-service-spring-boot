@@ -1,9 +1,15 @@
 package fr.greta.domes.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Animal {
@@ -11,12 +17,22 @@ public class Animal {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idAnimal;
+	
+	@Column(length = 30, nullable = false)
+	@NotNull
+	@Size(min = 1, max = 30)
 	private String surnom;
+	
 	private String imageAnimal;
+	
 	private String descriptionAnimal;
+	
 	private double prixUnitaire;
-//	@ManyToOne
-//	private RaceEspece raceEspece;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "race_espece_id", nullable = false)
+	@NotNull
+	private RaceEspece raceEspece;
 
 	public int getIdAnimal() {
 		return idAnimal;
@@ -58,12 +74,20 @@ public class Animal {
 		this.prixUnitaire = prixUnitaire;
 	}
 
-//	public RaceEspece getRaceEspece() {
-//		return raceEspece;
-//	}
-//
-//	public void setRaceEspece(RaceEspece raceEspece) {
-//		this.raceEspece = raceEspece;
-//	}
+	public RaceEspece getRaceEspece() {
+		return raceEspece;
+	}
+
+	public void setRaceEspece(RaceEspece raceEspece) {
+		this.raceEspece = raceEspece;
+	}
+
+	@Override
+	public String toString() {
+		return "Animal [idAnimal=" + idAnimal + ", surnom=" + surnom + ", imageAnimal=" + imageAnimal
+				+ ", descriptionAnimal=" + descriptionAnimal + ", prixUnitaire=" + prixUnitaire + ", raceEspece="
+				+ raceEspece + "]";
+	}
+	
 
 }
