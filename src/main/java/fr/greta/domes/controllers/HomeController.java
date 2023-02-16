@@ -27,7 +27,11 @@ public class HomeController {
 		return "contact";
 	}
 	
-	
+	@GetMapping("/shop")
+	public String shop() {
+		System.out.println("page animalerie");
+		return "shop";
+	}
 	
 	@GetMapping("/GoSearch")
 	public String goSearch() {

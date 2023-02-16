@@ -40,9 +40,9 @@
 }
 </style>
 <body>
-		<%
-		request.setAttribute("register_active", "active");
-		%>
+	<%
+	request.setAttribute("register_active", "active");
+	%>
 	<jsp:include page="templates/header.jsp" />
 
 
@@ -163,12 +163,16 @@
 								<form:errors path="password" cssClass="error" />
 							</div>
 						</div>
-						<!--                     <div class="wrap-input100 validate-input m-b-16" data-validate="Le mot de passe est requis"> -->
-						<%--                         <form:input class="input100" type="password" path="repeat-password" --%>
-						<%--                                placeholder="Confirmer le mot de passe"/> --%>
-						<%--                                <form:errors path="repeat-password" cssClass="error" /> --%>
-						<!--                         <span class="focus-input100"></span> -->
-						<!--                     </div> -->
+						<div class="wrap-input100 m-b-16">
+							<form:input path="repeat-password" type="password"
+								class="input100" placeholder="Confirmer le mot de passe*" />
+							<label class="pl-3">(Le mot de passe doit avoir une
+								majuscule, une minuscule et doit comporter entre 6 et 10
+								caractères)</label> <span class="focus-input100"></span>
+							<div class="pl-3">
+								<form:errors path="password" cssClass="error" />
+							</div>
+						</div>
 
 						<div class="container-login100-form-btn m-t-17">
 							<button type="submit" class="login100-form-btn">S'inscrire

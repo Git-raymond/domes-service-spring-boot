@@ -26,12 +26,15 @@ response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 						<h1 class="mb-2">Trouvez votre animal de compagnie idéal</h1>
 
 						<div class="intro-text text-center text-md-left">
-							<p class="mb-4">Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit. Phasellus at iaculis quam. Integer accumsan
-								tincidunt fringilla.</p>
+							<p class="mb-4">Notre équipe de professionnels passionnés veille à ce que
+							tous nos animaux soient en bonne santé et heureux avant d'être
+							mis en vente. Nous nous efforçons également de fournir des
+							informations détaillées sur chaque espèce, afin que vous puissiez
+							prendre une décision éclairée quant à l'animal qui conviendra le
+							mieux à votre mode de vie et à votre foyer.</p>
 
 							<p>
-								<a href="shop" class="btn btn-sm btn-primary">Shop Now</a>
+								<a href="shop" class="btn btn-sm btn-primary">Animalerie</a>
 							</p>
 						</div>
 					</div>
