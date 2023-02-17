@@ -105,48 +105,9 @@
 								<form:errors path="telephone" cssClass="error" />
 							</div>
 						</div>
+
 						<div class="wrap-input100 m-b-16">
-							<form:input path="adresse" type="text" class="input100"
-								placeholder="Adresse*" />
-							<span class="focus-input100"></span>
-							<div class="pl-3">
-								<form:errors path="adresse" cssClass="error" />
-							</div>
-						</div>
-						<div class="wrap-input100 m-b-16">
-							<form:input path="ville" type="text" class="input100"
-								placeholder="Ville*" />
-							<span class="focus-input100"></span>
-							<div class="pl-3">
-								<form:errors path="ville" cssClass="error" />
-							</div>
-						</div>
-						<div class="wrap-input100 m-b-16">
-							<form:input path="codePostal" type="text" class="input100"
-								placeholder="Code postal*" />
-							<span class="focus-input100"></span>
-							<div class="pl-3">
-								<form:errors path="codePostal" cssClass="error" />
-							</div>
-						</div>
-						<div class="wrap-input100 m-b-16">
-							<form:input path="adresseLivraison[0].adresseLivraison"
-								type="text" class="input100" placeholder="Adresse de livraison" />
-							<span class="focus-input100"></span>
-						</div>
-						<div class="wrap-input100 m-b-16">
-							<form:input path="adresseLivraison[0].villeLivraison" type="text"
-								class="input100" placeholder="Ville de livraison" />
-							<span class="focus-input100"></span>
-						</div>
-						<div class="wrap-input100 m-b-16">
-							<form:input path="adresseLivraison[0].codePostalLivraison"
-								type="text" class="input100"
-								placeholder="Code postal de livraison" />
-							<span class="focus-input100"></span>
-						</div>
-						<div class="wrap-input100 m-b-16">
-							<form:input path="email" type="text" class="input100"
+							<form:input path="email" type="email" class="input100"
 								placeholder="Email*" />
 							<span class="focus-input100"></span>
 							<div class="pl-3">
@@ -156,21 +117,20 @@
 						<div class="wrap-input100 m-b-16">
 							<form:input path="password" type="password" class="input100"
 								placeholder="Mot de passe*" />
-							<label class="pl-3">(Le mot de passe doit avoir une
-								majuscule, une minuscule et doit comporter entre 6 et 10
-								caractères)</label> <span class="focus-input100"></span>
+							<label class="pl-3">(Le mot de passe doit contenir au
+								moins une majuscule, une minuscule, un chiffre, un caractère
+								spécial et comporter au moins 8 caractères)</label> <span
+								class="focus-input100"></span>
 							<div class="pl-3">
 								<form:errors path="password" cssClass="error" />
 							</div>
 						</div>
 						<div class="wrap-input100 m-b-16">
-							<form:input path="repeat-password" type="password"
+							<form:input path="confirmPassword" type="password"
 								class="input100" placeholder="Confirmer le mot de passe*" />
-							<label class="pl-3">(Le mot de passe doit avoir une
-								majuscule, une minuscule et doit comporter entre 6 et 10
-								caractères)</label> <span class="focus-input100"></span>
+							<label class="pl-3">Répéter le mot de passe</label> <span class="focus-input100"></span>
 							<div class="pl-3">
-								<form:errors path="password" cssClass="error" />
+								<form:errors path="confirmPassword" cssClass="error" />
 							</div>
 						</div>
 
@@ -178,6 +138,7 @@
 							<button type="submit" class="login100-form-btn">S'inscrire
 							</button>
 						</div>
+
 					</form:form>
 					<br>
 					<div class="text-center">

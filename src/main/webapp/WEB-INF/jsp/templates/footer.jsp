@@ -10,30 +10,31 @@
 					</div>
 					<div class="col-md-6 col-lg-4">
 						<ul class="list-unstyled">
-							<li><a href="#">Sell online</a></li>
-							<li><a href="#">Features</a></li>
-							<li><a href="#">Shopping cart</a></li>
-							<li><a href="#">Store builder</a></li>
+							<li><a href="home">Accueil</a></li>
+							<li><a href="AboutUs">A propos</a></li>
+							<li><a href="shop">Animalerie</a></li>
+							<li><a href="https://entreprendre.service-public.fr/vosdroits/F33527">Conditions générales de vente</a></li>
 						</ul>
 					</div>
 					<div class="col-md-6 col-lg-4">
 						<ul class="list-unstyled">
-							<li><a href="#">Mobile commerce</a></li>
-							<li><a href="#">Dropshipping</a></li>
-							<li><a href="#">Website development</a></li>
+							<li><a href="GoLogin">Se connecter</a></li>
+							<li><a href="goToRegister">S'inscrire</a></li>
+							<li><a href="contact">Contact</a></li>
+							<li><a href="https://entreprendre.service-public.fr/vosdroits/F31228">Mentions légales</a></li>
 						</ul>
 					</div>
 					<div class="col-md-6 col-lg-4">
 						<ul class="list-unstyled">
-							<li><a href="#">Point of sale</a></li>
-							<li><a href="#">Hardware</a></li>
-							<li><a href="#">Software</a></li>
+							<li><a href="https://www.la-spa.fr/">La Société Protectrice des Animaux (SPA)</a></li>
+							<li><a href="https://parti-animaliste.fr/">Le Parti animaliste</a></li>
+							<li><a href="https://www.service-public.fr/particuliers/vosdroits/N18944">Animal de compagnie</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-				<h3 class="footer-heading mb-4">Promo</h3>
+				<h3 class="footer-heading mb-4">Promotions</h3>
 				<a href="#" class="block-6"> <img src="images/logos/logo.png"
 					alt="Image placeholder" class="img-fluid rounded mb-4">
 					<h3 class="font-weight-light  mb-0">Trouvez votre animal de
@@ -47,19 +48,18 @@
 					<ul class="list-unstyled">
 						<li class="address">69 Rue de l'industrie, 92700 Colombes ,
 							FRANCE</li>
-						<li class="phone"><a href="tel://23923929210">+2 392 3929
-								210</a></li>
+						<li class="phone"><a href="tel://0141192030">01 41 19 20 30</a></li>
 						<li class="email">domes@service.com</li>
 					</ul>
 				</div>
 
 				<div class="block-7">
 					<form action="#" method="post">
-						<label for="email_subscribe" class="footer-heading">Subscribe</label>
+						<label for="email_subscribe" class="footer-heading">S'abonner</label>
 						<div class="form-group">
 							<input type="text" class="form-control py-4" id="email_subscribe"
 								placeholder="Email"> <input type="submit"
-								class="btn btn-sm btn-primary" value="Send">
+								class="btn btn-sm btn-primary" value="Envoyer">
 						</div>
 					</form>
 				</div>
@@ -74,7 +74,7 @@
 					<script>
 						document.write(new Date().getFullYear());
 					</script>
-					Tous droits réservés</a>
+					Tous droits réservés
 				</p>
 			</div>
 

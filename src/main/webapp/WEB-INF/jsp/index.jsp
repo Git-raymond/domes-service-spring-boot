@@ -93,7 +93,7 @@ response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 			<div class="container">
 				<div class="row justify-content-center  mb-5">
 					<div class="col-md-7 site-section-heading text-center pt-4">
-						<h2>Big Sale!</h2>
+						<h2>En Promo !</h2>
 					</div>
 				</div>
 				<div class="row align-items-center">
@@ -104,17 +104,17 @@ response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 					</div>
 					<div class="col-md-12 col-lg-5 text-center pl-md-5">
 						<h2>
-							<a href="#">-50% sur tous les animaux</a>
+							<a href="#">-50% sur tous les animaux !</a>
 						</h2>
 						<p class="post-meta mb-4">
-							By <a href="#">Carl Smith</a> <span class="block-8-sep">&bullet;</span>
-							September 3, 2018
+							Par <a href="#">Roland Romain</a> <span class="block-8-sep">&bullet;</span>
+							 14 février 2023
 						</p>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 							Quisquam iste dolor accusantium facere corporis ipsum animi
 							deleniti fugiat. Ex, veniam?</p>
 						<p>
-							<a href="shop" class="btn btn-primary btn-sm">Shop Now</a>
+							<a href="shop" class="btn btn-primary btn-sm">Animalerie</a>
 						</p>
 					</div>
 				</div>

@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-7 site-section-heading text-center pt-4">
-                <h2>Featured Products</h2>
+                <h2>Animaux en vedette</h2>
             </div>
         </div>
         <div class="row">

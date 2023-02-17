@@ -16,7 +16,7 @@ public class Animal {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int idAnimal;
+	private Long idAnimal;
 	
 	@Column(length = 30, nullable = false)
 	@NotNull
@@ -34,11 +34,11 @@ public class Animal {
 	@NotNull
 	private RaceEspece raceEspece;
 
-	public int getIdAnimal() {
+	public Long getIdAnimal() {
 		return idAnimal;
 	}
 
-	public void setIdAnimal(int idAnimal) {
+	public void setIdAnimal(Long idAnimal) {
 		this.idAnimal = idAnimal;
 	}
 

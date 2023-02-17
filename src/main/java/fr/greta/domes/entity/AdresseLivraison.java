@@ -1,22 +1,14 @@
 package fr.greta.domes.entity;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.Embeddable;
 import javax.validation.constraints.Size;
 
-@Entity
+@Embeddable
 public class AdresseLivraison {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(updatable = false, nullable = true)
-	private Long idAdresseLivraison;
 
-	@Column(length = 50, nullable = true)
-	@Size(max = 50)
+	@Column(length = 100, nullable = true)
+	@Size(max = 100)
 	private String adresseLivraison;
 
 	@Column(length = 50, nullable = true)
@@ -24,7 +16,7 @@ public class AdresseLivraison {
 	private String villeLivraison;
 
 	@Column(length = 10, nullable = true)
-	@Size(max = 10)
+	@Size(min = 10, max = 10)
 	private String codePostalLivraison;
 
 	public AdresseLivraison() {
@@ -34,14 +26,6 @@ public class AdresseLivraison {
 		this.adresseLivraison = adresseLivraison;
 		this.villeLivraison = villeLivraison;
 		this.codePostalLivraison = codePostalLivraison;
-	}
-
-	public Long getIdAdresseLivraison() {
-		return idAdresseLivraison;
-	}
-
-	public void setIdAdresseLivraison(Long idAdresseLivraison) {
-		this.idAdresseLivraison = idAdresseLivraison;
 	}
 
 	public String getAdresseLivraison() {
@@ -69,11 +53,6 @@ public class AdresseLivraison {
 	}
 
 
-	@Override
-	public String toString() {
-		return "AdresseLivraison [idAdresseLivraison=" + idAdresseLivraison + ", adresseLivraison="
-				+ adresseLivraison + ", villeLivraison=" + villeLivraison + ", codePostalLivraison="
-				+ codePostalLivraison + "]";
-	}
+
 
 }

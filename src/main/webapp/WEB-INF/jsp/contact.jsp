@@ -5,15 +5,6 @@
 <html lang="en">
 <title>Contact</title>
 <jsp:include page="templates/head.jsp" />
-<style>
-ul {
-	list-style: none;
-}
-
-li {
-	list-style: none;
-}
-</style>
 <body>
 	<div class="site-wrap">
 		<%
@@ -33,22 +24,23 @@ li {
 			</div>
 		</div>
 		<div class="box mt-3 px-5 mx-5" id="map">
-			<h1 class="text-center">DOMES SERVICE</h1>
+			<h1 class="text-center">ANIMALERIE DOMES SERVICE</h1>
 			<br>
 			<iframe
 				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2622.066105334269!2d2.2438140159683235!3d48.914132779293006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e665b73af7d3d9%3A0xddf064acad6b6826!2sLyc%C3%A9e%20
 Polyvalent%20Claude%20Garamont!5e0!3m2!1sfr!2sfr!4v1676294189316!5m2!1sfr!2sfr"
 				width="100%" height="500" style="border: 0;" allowfullscreen=""
 				loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-			<p>
-			<ul>
-				<li>Adresse : 69 rue de l'industrie 92700 Colombes</li>
-				<li>Numéro de téléphone : 01 41 19 20 30</li>
-				<li>Adresse e-mail : domes@service.com</li>
-				<li>Heures d'ouverture : Du lundi au vendredi, de 9h à 17h</li>
-			</ul>
-			</p>
+			<br>
+			<br>
+			<div>
+				<ul class="list-unstyled">
+					<li>Adresse : 69 rue de l'industrie 92700 Colombes</li>
+					<li>Numéro de téléphone : 01 41 19 20 30</li>
+					<li>Adresse e-mail : domes@service.com</li>
+					<li>Heures d'ouverture : Du lundi au vendredi, de 9h à 17h</li>
+				</ul>
+			</div>
 		</div>
 
 		<div class="site-section">

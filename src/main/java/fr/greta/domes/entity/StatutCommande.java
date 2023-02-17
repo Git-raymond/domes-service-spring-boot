@@ -1,28 +1,31 @@
 package fr.greta.domes.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 @Entity
 public class StatutCommande {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idStatutCommande;
-	@Column(length = 30, nullable = false)
-	@NotNull
-	@Size(min = 1, max = 30)
-	private String statutCommande;
+	
+	
+	public enum Statut {
+		EN_PREPARATION, EN_COURS_DE_LIVRAISON, ANIMAL_LIVRE
+	}
+
+	@Enumerated(EnumType.STRING)
+	private Statut statut = Statut.EN_PREPARATION;
 
 	public StatutCommande() {
 	}
 
-	public StatutCommande(String statutCommande) {
-		this.statutCommande = statutCommande;
+	public StatutCommande(Statut statut) {
+		this.statut= statut;
 	}
 
 	public Long getIdStatutCommande() {
@@ -33,18 +36,19 @@ public class StatutCommande {
 		this.idStatutCommande = idStatutCommande;
 	}
 
-	public String getStatutCommande() {
-		return statutCommande;
+	public Statut getStatut() {
+		return statut;
 	}
 
-	public void setStatutCommande(String statutCommande) {
-		this.statutCommande = statutCommande;
+	public void setStatut(Statut statut) {
+		this.statut = statut;
 	}
 
 	@Override
 	public String toString() {
-		return "StatutCommande [idStatutCommande=" + idStatutCommande + ", statutCommande=" + statutCommande + "]";
+		return "StatutCommande [idStatutCommande=" + idStatutCommande + ", statut=" + statut + "]";
 	}
-	
+
+
 
 }

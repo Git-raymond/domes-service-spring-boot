@@ -1,29 +1,26 @@
 package fr.greta.domes.entity;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
+@Table(name = "client")
 public class Client {
 
 	@Id
@@ -31,35 +28,29 @@ public class Client {
 	private Long IdClient;
 
 	// @Size(min = 6, message = "la taille doit etre inferieure a six")
-	@NotEmpty(message = "Le champ nom ne peut pas être vide")
-//	@Pattern(regexp = "^([a-zA-Z]{2,}\\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\\s?([a-zA-Z]{1,})?)", message = "Format de caractère non autorisé")
+	@NotEmpty(message = "Le champ nom ne peut pas être vide.")
+	@Pattern(regexp = "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$", message = "Format de caractère non autorisé")
 	private String nom;
 
-	@NotEmpty(message = "Le champ prénom ne peut pas être vide")
+	@NotEmpty(message = "Le champ prénom ne peut pas être vide.")
+	@Pattern(regexp = "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$", message = "Format de caractère non autorisé")
 	private String prenom;
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
-	@NotNull(message = "Le champ date de naissance ne peut pas être vide")
+	@NotNull(message = "Le champ date de naissance ne peut pas être vide.")
 	private Date dateNaissance;
 
-	@NotEmpty(message = "Le champ email ne peut pas être vide")
+	@Column(unique = true)
+	@NotEmpty(message = "Le champ email ne peut pas être vide.")
 	private String email;
 
-	@Pattern(regexp = "((?=.*[A-Z]).{6,10})", message = "Le mot de passe doit avoir une majuscule, une minuscule et doit comporter entre 6 et 10 caractères")
+	@Column(nullable = false)
+	@Pattern(regexp = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$", message = "Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre, un caractère spécial et comporter au moins 8 caractères")
 	private String password;
 
 	@NotEmpty(message = "Le champ numéro de tél. ne peut pas être vide")
 	private String telephone;
-
-	@NotEmpty(message = "Le champ adresse ne peut pas être vide")
-	private String adresse;
-
-	@NotEmpty(message = "Le champ ville ne peut pas être vide")
-	private String ville;
-
-	@NotEmpty(message = "Le champ code postal ne peut pas être vide")
-	private String codePostal;
 
 	public enum Statut {
 		ACTIVE, DESACTIVE
@@ -78,26 +69,26 @@ public class Client {
 		dateCreation = new Date();
 	}
 
-	@OneToMany(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
-	@JoinColumn(name = "client_id")
-	private List<AdresseLivraison> adresseLivraison = new ArrayList<AdresseLivraison>(
-			Arrays.asList(new AdresseLivraison()));
+	@Embedded
+	private AdresseLivraison adresseLivraison;
+	
+	@Transient
+	@Pattern(regexp = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$", message = "Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre, un caractère spécial et comporter au moins 8 caractères")
+	private String confirmPassword;
 
 	public Client() {
 
 	}
 
 	public Client(String nom, String prenom, Date dateNaissance, String email, String password, String telephone,
-			String adresse, String ville, String codePostal, Date dateCreation) {
+			AdresseLivraison adresseLivraison, Date dateCreation) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.dateNaissance = dateNaissance;
 		this.email = email;
 		this.password = password;
 		this.telephone = telephone;
-		this.adresse = adresse;
-		this.ville = ville;
-		this.codePostal = codePostal;
+		this.adresseLivraison = adresseLivraison;
 		this.dateCreation = dateCreation;
 	}
 
@@ -157,31 +148,6 @@ public class Client {
 		this.telephone = telephone;
 	}
 
-	public String getAdresse() {
-		return adresse;
-	}
-
-	public void setAdresse(String adresse) {
-		this.adresse = adresse;
-	}
-
-	public String getVille() {
-		return ville;
-	}
-
-	public void setVille(String ville) {
-		this.ville = ville;
-	}
-
-	public String getCodePostal() {
-		return codePostal;
-	}
-
-	public void setCodePostal(String codePostal) {
-		this.codePostal = codePostal;
-	}
-
-	
 	public Statut getStatut() {
 		return statut;
 	}
@@ -198,12 +164,28 @@ public class Client {
 		this.dateCreation = dateCreation;
 	}
 
-	public List<AdresseLivraison> getAdresseLivraison() {
+	public AdresseLivraison getAdresseLivraison() {
 		return adresseLivraison;
 	}
 
-	public void setAdresseLivraison(List<AdresseLivraison> adresseLivraison) {
+	public void setAdresseLivraison(AdresseLivraison adresseLivraison) {
 		this.adresseLivraison = adresseLivraison;
+	}
+
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
+	}
+
+	@Override
+	public String toString() {
+		return "Client [IdClient=" + IdClient + ", nom=" + nom + ", prenom=" + prenom + ", dateNaissance="
+				+ dateNaissance + ", email=" + email + ", password=" + password + ", telephone=" + telephone
+				+ ", statut=" + statut + ", dateCreation=" + dateCreation + ", adresseLivraison=" + adresseLivraison
+				+ "]";
 	}
 
 }

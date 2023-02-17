@@ -33,18 +33,18 @@ public class CategorieService {
 		return repository.findByNomCategorie(nomCategorie);
 	}
 
-	public void addCategorie(Categorie Categorie) {
-		repository.save(Categorie);
+	public void addCategorie(Categorie categorie) {
+		repository.save(categorie);
 	}
 
 	public void deleteCategoryById(Long id) {
 		repository.deleteById(id);
 	}
 
-	public void updateCategory(Categorie Categorie) {
-		Optional<Categorie> oldCategorie = repository.findById(Categorie.getIdCategorie());
+	public void updateCategory(Categorie categorie) {
+		Optional<Categorie> oldCategorie = repository.findById(categorie.getIdCategorie());
 		if (null != oldCategorie) {
-			repository.save(Categorie);
+			repository.save(categorie);
 		}
 
 	}

@@ -85,7 +85,7 @@ response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 								<div class="">
 									<img src="images/person_1.jpg" alt="Image placeholder"
 										class="mb-4">
-									<h3 class="">Elizabeth Graham</h3>
+									<h3 class="">Raymond SARAY</h3>
 									<p class="">CEO/Co-Founder</p>
 								</div>
 								<div class="mb-4">
@@ -102,7 +102,7 @@ response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 								<div class="">
 									<img src="images/person_2.jpg" alt="Image placeholder"
 										class="mb-4">
-									<h3 class="">Jennifer Greive</h3>
+									<h3 class="">Jade TERNIER</h3>
 									<p class="">Co-Founder</p>
 								</div>
 								<div class="mb-4">
@@ -119,7 +119,7 @@ response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 								<div class="">
 									<img src="images/person_3.jpg" alt="Image placeholder"
 										class="mb-4">
-									<h3 class="">Patrick Marx</h3>
+									<h3 class="">???</h3>
 									<p class="">Marketing</p>
 								</div>
 								<div class="mb-4">
