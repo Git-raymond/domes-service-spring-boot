@@ -52,17 +52,29 @@ public class ClientController {
 //	    }
 //	  }
 
+//	@DeleteMapping("/deleteUser/{id}")
+//	public ResponseEntity<HttpStatus> deleteTutorial(@PathVariable("id") long id) {
+//		try {
+//			clientRepository.deleteById(id);
+//			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//		} catch (Exception e) {
+//			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+//		}
+//	}
+
 	@GetMapping("/espaceClient/{id}")
 	public String espaceClient(@PathVariable Long id, Model model) {
-		model.addAttribute("loginuser", new Client());
+		Client client = clientService.findClientById(id);
+		model.addAttribute("client", client);
 		System.out.println("page espace client");
 		return "espaceclient";
 	}
 
 	@PostMapping("/updateUser/{id}")
-	public String updateUser(@Valid @ModelAttribute("updateuser") Client client, BindingResult result, Model model) {
+	public String updateUser(@PathVariable Long id, @Valid @ModelAttribute("client") Client client,
+			BindingResult result, Model model) {
 		if (result.hasErrors()) {
-			model.addAttribute("message", "Echec des modifications");
+			model.addAttribute("message", "Echec des modifications !");
 			System.out.println("client non modifié dans la bdd");
 		}
 		if (!client.getPassword().equals(client.getConfirmPassword())) {
@@ -75,20 +87,20 @@ public class ClientController {
 			result.addError(new FieldError("client", "email", "* Email déjà existant !"));
 			return "espaceclient";
 		} else {
+			this.clientService.findClientById(id);
 			this.clientService.addClient(client);
-			model.addAttribute("message", "Le client est sauvegardé");
+			model.addAttribute("message", "Les modifications");
 			System.out.println("Client enregistré dans la bdd avec succès !");
-			return "loginsucces";
+			return "updatesucces";
 		}
 	}
 
-//	@DeleteMapping("/deleteUser/{id}")
-//	public ResponseEntity<HttpStatus> deleteTutorial(@PathVariable("id") long id) {
-//		try {
-//			clientRepository.deleteById(id);
-//			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-//		} catch (Exception e) {
-//			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-//		}
-//	}
+	@PostMapping("/delete/{id}")
+	public String deleteBook(@PathVariable Long id, Model model) {
+		clientService.findClientById(id);
+		clientService.deleteClientById(id);
+		model.addAttribute("client", clientService.findAllClients());
+		return "deletesucces";
+	}
+
 }

@@ -76,7 +76,7 @@
 									class="label-checkbox100" for="ckb1"> Restez connecté </label>
 							</div>
 							<div class="pr-3">
-								<a href="#" class="txt1"> Mot de passe oublié? </a>
+								<a href="#" class="txt1"> Mot de passe oublié ? </a>
 							</div>
 						</div>
 						<div class="container-login100-form-btn m-t-17">

@@ -35,9 +35,21 @@ public class MainController {
 		return "shop";
 	}
 	
-	@GetMapping("/succes")
+	@GetMapping("/succesModification")
+	public String goUpdateSucces() {
+		System.out.println("page succès modifications client");
+		return "loginsucces";
+	}
+	
+	@GetMapping("/succesSuppression")
+	public String goDeleteSucces() {
+		System.out.println("page succès suppression client");
+		return "loginsucces";
+	}
+	
+	@GetMapping("/succesConnexion")
 	public String goLoginSucces() {
-		System.out.println("page succès enregistrement");
+		System.out.println("page succès connexion");
 		return "loginsucces";
 	}
 

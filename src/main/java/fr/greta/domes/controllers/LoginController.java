@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import fr.greta.domes.entity.Client;
@@ -20,7 +21,7 @@ public class LoginController {
 
 	@Autowired
 	ClientService clientService;
-	
+
 	@GetMapping("/connexion")
 	public String goLogin(Model model) {
 		model.addAttribute("loginuser", new Client());
@@ -29,7 +30,9 @@ public class LoginController {
 	}
 
 	@PostMapping("/loginUser")
-	public String loginUser(@Valid @ModelAttribute("loginuser") Client client, BindingResult result, Model model) {
+	public String loginUser(@Valid @ModelAttribute("loginuser") Client client,
+			BindingResult result, Model model) {
+		model.addAttribute("client", client);
 		if ((clientService.checkLoginClient(client.getEmail(), client.getPassword()) != null)
 				&& (client.getStatut().equals(Statut.ACTIVE))) {
 			System.out.println("Succès du login");
