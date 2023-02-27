@@ -10,6 +10,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import fr.greta.domes.dao.ClientDao;
 import fr.greta.domes.entity.Client;
 import fr.greta.domes.repository.ClientRepository;
 
@@ -18,20 +19,32 @@ public class ClientService {
 
 	@Autowired
 	private ClientRepository clientRepository;
+	@Autowired
+	private ClientDao clientDao;
 
 	private PasswordEncoder passwordEncoder;
+
+	private Client client;
 
 	public ClientService(ClientRepository repository) {
 		this.clientRepository = repository;
 		this.passwordEncoder = new BCryptPasswordEncoder();
 	}
 
-	public Collection<Client> findClientByEmail(String email) {
+	public List<Client> findClientByPassword(String password) {
+		// String encodedPassword = this.passwordEncoder.encode(client.getPassword());
+		return clientRepository.findByPassword(password);
+	}
+
+	public List<Client> findClientByEmail(String email) {
 		return clientRepository.findByEmail(email);
 	}
 
+	public Client checkLoginClient(String email, String password) {
+		return clientDao.loginClient(email, password);
+	}
+
 	public boolean checkEmailExists(String email) {
-		
 		return !findClientByEmail(email).isEmpty();
 	}
 

@@ -28,28 +28,28 @@ public class Client {
 	private Long IdClient;
 
 	// @Size(min = 6, message = "la taille doit etre inferieure a six")
-	@NotEmpty(message = "Le champ nom ne peut pas être vide.")
-	@Pattern(regexp = "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$", message = "Format de caractère non autorisé")
+	@NotEmpty(message = "* Le champ nom ne peut pas être vide.")
+	@Pattern(regexp = "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$", message = "* Format de caractère non autorisé")
 	private String nom;
 
-	@NotEmpty(message = "Le champ prénom ne peut pas être vide.")
-	@Pattern(regexp = "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$", message = "Format de caractère non autorisé")
+	@NotEmpty(message = "* Le champ prénom ne peut pas être vide.")
+	@Pattern(regexp = "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$", message = "* Format de caractère non autorisé")
 	private String prenom;
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
-	@NotNull(message = "Le champ date de naissance ne peut pas être vide.")
+	@NotNull(message = "* Le champ date de naissance ne peut pas être vide.")
 	private Date dateNaissance;
 
 	@Column(unique = true)
-	@NotEmpty(message = "Le champ email ne peut pas être vide.")
+	@NotEmpty(message = "* Le champ email ne peut pas être vide.")
 	private String email;
 
 	@Column(nullable = false)
-	@Pattern(regexp = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$", message = "Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre, un caractère spécial et comporter au moins 8 caractères")
+	@Pattern(regexp = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$", message = "* Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre, un caractère spécial et comporter au moins 8 caractères")
 	private String password;
 
-	@NotEmpty(message = "Le champ numéro de tél. ne peut pas être vide")
+	@NotEmpty(message = "* Le champ numéro de tél. ne peut pas être vide")
 	private String telephone;
 
 	public enum Statut {
@@ -71,9 +71,9 @@ public class Client {
 
 	@Embedded
 	private AdresseLivraison adresseLivraison;
-	
+
 	@Transient
-	@Pattern(regexp = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$", message = "Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre, un caractère spécial et comporter au moins 8 caractères")
+	@Pattern(regexp = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$", message = "* Le mot de passe de confirmation doit contenir au moins une majuscule, une minuscule, un chiffre, un caractère spécial et comporter au moins 8 caractères")
 	private String confirmPassword;
 
 	public Client() {

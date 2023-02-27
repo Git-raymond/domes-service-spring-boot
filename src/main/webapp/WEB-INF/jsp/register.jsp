@@ -57,7 +57,22 @@
 						<span class="login100-form-title m-b-20"> Inscription </span>
 
 						${alert}
-
+						<div class="pl-3 mb-4">
+							<form:errors path="nom" cssClass="error" />
+							<br>
+							<form:errors path="prenom" cssClass="error" />
+							<br>
+							<form:errors path="dateNaissance" cssClass="error" />
+							<br>
+							<form:errors path="telephone" cssClass="error" />
+							<br>
+							<form:errors path="email" cssClass="error" />
+							<br>
+							<form:errors path="password" cssClass="error" />
+							<br>
+							<form:errors path="confirmPassword" cssClass="error" />
+							<br>
+						</div>
 						<div class="m-b-16">
 							<label class="m-0" for="imgInp">
 								<figure class="d-flex justify-content-center m-0">
@@ -128,7 +143,8 @@
 						<div class="wrap-input100 m-b-16">
 							<form:input path="confirmPassword" type="password"
 								class="input100" placeholder="Confirmer le mot de passe*" />
-							<label class="pl-3">Répéter le mot de passe</label> <span class="focus-input100"></span>
+							<label class="pl-3">Répéter le mot de passe</label> <span
+								class="focus-input100"></span>
 							<div class="pl-3">
 								<form:errors path="confirmPassword" cssClass="error" />
 							</div>
@@ -143,7 +159,7 @@
 					<br>
 					<div class="text-center">
 						<p class="txt1" style="color: #999999">
-							Déjà client? <a href="/GoLogin" class="txt1"> Se connecter
+							Déjà client ? <a href="/connexion" class="txt1"> Se connecter
 								ici</a>
 						</p>
 					</div>

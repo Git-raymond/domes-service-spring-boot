@@ -10,16 +10,16 @@
 					</div>
 					<div class="col-md-6 col-lg-4">
 						<ul class="list-unstyled">
-							<li><a href="home">Accueil</a></li>
-							<li><a href="AboutUs">A propos</a></li>
-							<li><a href="shop">Animalerie</a></li>
+							<li><a href="accueil">Accueil</a></li>
+							<li><a href="aPropos">A propos</a></li>
+							<li><a href="animalerie">Animalerie</a></li>
 							<li><a href="https://entreprendre.service-public.fr/vosdroits/F33527">Conditions générales de vente</a></li>
 						</ul>
 					</div>
 					<div class="col-md-6 col-lg-4">
 						<ul class="list-unstyled">
-							<li><a href="GoLogin">Se connecter</a></li>
-							<li><a href="goToRegister">S'inscrire</a></li>
+							<li><a href="connexion">Se connecter</a></li>
+							<li><a href="inscription">S'inscrire</a></li>
 							<li><a href="contact">Contact</a></li>
 							<li><a href="https://entreprendre.service-public.fr/vosdroits/F31228">Mentions légales</a></li>
 						</ul>

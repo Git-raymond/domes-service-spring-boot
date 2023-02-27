@@ -73,11 +73,11 @@ response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 		<div class="container">
 			<ul class="site-menu js-clone-nav d-none d-md-block"
 				style="padding: 0">
-				<li class="${home_active}"><a href="home">Accueil</a></li>
-				<li class="${about_active}"><a href="AboutUs">A propos</a></li>
-				<li class="${shop_active}"><a href="shop">Animalerie</a></li>
-				<li class="${login_active}"><a href="GoLogin">Se connecter</a></li>
-				<li class="${register_active}"><a href="goToRegister">S'inscrire</a></li>
+				<li class="${home_active}"><a href="accueil">Accueil</a></li>
+				<li class="${about_active}"><a href="aPropos">A propos</a></li>
+				<li class="${shop_active}"><a href="animalerie">Animalerie</a></li>
+				<li class="${login_active}"><a href="connexion">Se connecter</a></li>
+				<li class="${register_active}"><a href="inscription">S'inscrire</a></li>
 				<li class="${contact_active}"><a href="contact">Contact</a></li>
 
 				<c:if test="${sessionScope.account != null}">

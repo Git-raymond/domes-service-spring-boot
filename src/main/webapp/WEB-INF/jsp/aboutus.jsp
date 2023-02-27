@@ -22,7 +22,7 @@ response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 mb-0">
-						<a href="home">Accueil</a> <span class="mx-2 mb-0">/</span> <strong
+						<a href="accueil">Accueil</a> <span class="mx-2 mb-0">/</span> <strong
 							class="text-black">A Propos</strong>
 					</div>
 				</div>

@@ -34,7 +34,7 @@ response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 							mieux à votre mode de vie et à votre foyer.</p>
 
 							<p>
-								<a href="shop" class="btn btn-sm btn-primary">Animalerie</a>
+								<a href="animalerie" class="btn btn-sm btn-primary">Animalerie</a>
 							</p>
 						</div>
 					</div>
