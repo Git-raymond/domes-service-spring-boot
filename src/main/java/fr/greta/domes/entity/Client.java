@@ -52,12 +52,7 @@ public class Client {
 	@NotEmpty(message = "* Le champ numéro de tél. ne peut pas être vide")
 	private String telephone;
 
-	public enum Statut {
-		ACTIVE, DESACTIVE
-	}
-
-	@Enumerated(EnumType.STRING)
-	private Statut statut = Statut.ACTIVE;
+	private boolean active = false;
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
@@ -81,13 +76,14 @@ public class Client {
 	}
 
 	public Client(String nom, String prenom, Date dateNaissance, String email, String password, String telephone,
-			AdresseLivraison adresseLivraison, Date dateCreation) {
+			boolean active, AdresseLivraison adresseLivraison, Date dateCreation) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.dateNaissance = dateNaissance;
 		this.email = email;
 		this.password = password;
 		this.telephone = telephone;
+		this.active = active;
 		this.adresseLivraison = adresseLivraison;
 		this.dateCreation = dateCreation;
 	}
@@ -148,12 +144,12 @@ public class Client {
 		this.telephone = telephone;
 	}
 
-	public Statut getStatut() {
-		return statut;
+	public boolean isActive() {
+		return active;
 	}
 
-	public void setStatut(Statut statut) {
-		this.statut = statut;
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 
 	public Date getDateCreation() {
@@ -184,8 +180,8 @@ public class Client {
 	public String toString() {
 		return "Client [IdClient=" + IdClient + ", nom=" + nom + ", prenom=" + prenom + ", dateNaissance="
 				+ dateNaissance + ", email=" + email + ", password=" + password + ", telephone=" + telephone
-				+ ", statut=" + statut + ", dateCreation=" + dateCreation + ", adresseLivraison=" + adresseLivraison
-				+ "]";
+				+ ", active=" + active + ", dateCreation=" + dateCreation + ", adresseLivraison=" + adresseLivraison
+				+ ", confirmPassword=" + confirmPassword + "]";
 	}
 
 }

@@ -1,7 +1,6 @@
 package fr.greta.domes.service;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -10,7 +9,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import fr.greta.domes.dao.ClientDao;
 import fr.greta.domes.entity.Client;
 import fr.greta.domes.repository.ClientRepository;
 
@@ -19,8 +17,6 @@ public class ClientService {
 
 	@Autowired
 	private ClientRepository clientRepository;
-	@Autowired
-	private ClientDao clientDao;
 
 	private PasswordEncoder passwordEncoder;
 
@@ -31,21 +27,29 @@ public class ClientService {
 		this.passwordEncoder = new BCryptPasswordEncoder();
 	}
 
-	public List<Client> findClientByPassword(String password) {
-		// String encodedPassword = this.passwordEncoder.encode(client.getPassword());
+	public Client findClientByPassword(String password) {
 		return clientRepository.findByPassword(password);
 	}
 
-	public List<Client> findClientByEmail(String email) {
+	public Client findClientByEmail(String email) {
 		return clientRepository.findByEmail(email);
 	}
 
-	public Client checkLoginClient(String email, String password) {
-		return clientDao.loginClient(email, password);
+	public boolean checkLoginClient(String email, String password) {
+		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		Client temp = clientRepository.findByEmail(email);
+		if (temp != null) {
+			if (passwordEncoder.matches(password, temp.getPassword())) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		return false;
 	}
 
 	public boolean checkEmailExists(String email) {
-		return !findClientByEmail(email).isEmpty();
+		return findClientByEmail(email) != null;
 	}
 
 	public List<Client> findAllClients() {
@@ -59,7 +63,7 @@ public class ClientService {
 		return clientRepository.findById(id).orElse(null);
 	}
 
-	public Collection<Client> findClientByNom(String nom) {
+	public Client findClientByNom(String nom) {
 		return clientRepository.findByNom(nom);
 	}
 

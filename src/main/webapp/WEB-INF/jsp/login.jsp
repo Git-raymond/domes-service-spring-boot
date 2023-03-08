@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <!DOCTYPE html>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="s" uri="http://www.springframework.org/tags/form"%>
 <html>
 <head>
 <title>Connexion</title>
@@ -48,25 +48,26 @@
 		<div class="container-login100" style="background-color: orange;">
 			<div class="shadow-lg p-2 p-lg-5 rounded" data-aos="fade-up">
 				<div class="wrap-login100 p-t-50 p-b-90">
-					<form:form action="/loginUser" method="post"
-					modelAttribute="loginuser"
+					<s:form
+						action="/loginUser"
+						method="post" modelAttribute="client"
 						class="login100-form validate-form flex-sb flex-w">
 						<span class="login100-form-title p-b-51"> Connexion</span>
-						${alert}
+						<span class="font-weight-bold text-danger text-center pl-5 pb-3">${erreur}</span>
 						<div class="wrap-input100 m-b-16">
-							<form:input path="email" class="input100" type="email"
+							<s:input path="email" class="input100" type="email"
 								placeholder="Email" />
 							<span class="focus-input100"></span>
 							<div class="pl-3">
-								<form:errors path="email" cssClass="error" />
+								<s:errors path="email" cssClass="error" />
 							</div>
 						</div>
 						<div class="wrap-input100 m-b-16">
-							<form:input path="password" class="input100" type="password"
+							<s:input path="password" class="input100" type="password"
 								placeholder="Mot de passe" />
 							<span class="focus-input100"></span>
 							<div class="pl-3">
-								<form:errors path="password" cssClass="error" />
+								<s:errors path="password" cssClass="error" />
 							</div>
 						</div>
 						<div class="flex-sb-m w-full p-t-3 p-b-24">
@@ -83,7 +84,7 @@
 							<button type="submit" class="login100-form-btn">Se
 								connecter</button>
 						</div>
-					</form:form>
+					</s:form>
 					<br>
 					<div class="text-center">
 						<p class="txt1" style="color: #999999">
