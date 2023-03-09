@@ -35,6 +35,10 @@ public class ClientService {
 		return clientRepository.findByEmail(email);
 	}
 
+	public Client findClientByStatut(String statut) {
+		return clientRepository.findByStatut(statut);
+	}
+
 	public boolean checkLoginClient(String email, String password) {
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 		Client temp = clientRepository.findByEmail(email);
@@ -82,7 +86,5 @@ public class ClientService {
 		if (null != oldClient) {
 			clientRepository.save(client);
 		}
-
 	}
-
 }

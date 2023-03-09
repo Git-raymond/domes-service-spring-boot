@@ -4,8 +4,6 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,7 +23,7 @@ public class Client {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long IdClient;
+	private Long idClient;
 
 	// @Size(min = 6, message = "la taille doit etre inferieure a six")
 	@NotEmpty(message = "* Le champ nom ne peut pas être vide.")
@@ -52,7 +50,8 @@ public class Client {
 	@NotEmpty(message = "* Le champ numéro de tél. ne peut pas être vide")
 	private String telephone;
 
-	private boolean active = false;
+	@Column(nullable = false)
+	private String statut;
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
@@ -62,6 +61,7 @@ public class Client {
 	@PrePersist
 	private void onCreate() {
 		dateCreation = new Date();
+		statut = "actif";
 	}
 
 	@Embedded
@@ -76,24 +76,24 @@ public class Client {
 	}
 
 	public Client(String nom, String prenom, Date dateNaissance, String email, String password, String telephone,
-			boolean active, AdresseLivraison adresseLivraison, Date dateCreation) {
+			String statut, AdresseLivraison adresseLivraison, Date dateCreation) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.dateNaissance = dateNaissance;
 		this.email = email;
 		this.password = password;
 		this.telephone = telephone;
-		this.active = active;
+		this.statut = statut;
 		this.adresseLivraison = adresseLivraison;
 		this.dateCreation = dateCreation;
 	}
 
 	public Long getIdClient() {
-		return IdClient;
+		return idClient;
 	}
 
 	public void setIdClient(Long idClient) {
-		IdClient = idClient;
+		this.idClient = idClient;
 	}
 
 	public String getNom() {
@@ -144,12 +144,12 @@ public class Client {
 		this.telephone = telephone;
 	}
 
-	public boolean isActive() {
-		return active;
+	public String getStatut() {
+		return statut;
 	}
 
-	public void setActive(boolean active) {
-		this.active = active;
+	public void setStatut(String statut) {
+		this.statut = statut;
 	}
 
 	public Date getDateCreation() {
@@ -178,9 +178,9 @@ public class Client {
 
 	@Override
 	public String toString() {
-		return "Client [IdClient=" + IdClient + ", nom=" + nom + ", prenom=" + prenom + ", dateNaissance="
+		return "Client [idClient=" + idClient + ", nom=" + nom + ", prenom=" + prenom + ", dateNaissance="
 				+ dateNaissance + ", email=" + email + ", password=" + password + ", telephone=" + telephone
-				+ ", active=" + active + ", dateCreation=" + dateCreation + ", adresseLivraison=" + adresseLivraison
+				+ ", statut=" + statut + ", dateCreation=" + dateCreation + ", adresseLivraison=" + adresseLivraison
 				+ ", confirmPassword=" + confirmPassword + "]";
 	}
 
