@@ -38,12 +38,12 @@ public class LoginController {
 				System.out.println(client.getStatut());
 				return "espaceclient";
 			} else if (temp.getStatut().equals("suspendu")) {
-				System.out.println("Statut désactivé");
+				System.out.println("Compte désactivé");
 				// modelMap.put("erreur", "* Votre comp.te a été suspendu !");
 				result.addError(new FieldError("client", "email", "* Votre compte a été suspendu !"));
 				return "login";
 			} else {
-				System.out.println("Statut en attente de validation");
+				System.out.println("Compte en attente de validation");
 				// modelMap.put("erreur", "* Votre comp.te a été suspendu !");
 				result.addError(new FieldError("client", "email",
 						"* Veuillez valider le lien de validation envoyé à votre adresse email !"));
